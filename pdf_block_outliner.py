@@ -10,7 +10,10 @@ def visualize_pymupdf_blocks(input_dir, output_dir):
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Process all PDFs in the input directory
-    pdf_files = input_dir.glob("*.pdf")
+    #pdf_files = input_dir.glob("*.pdf")
+
+    # Process all PDFs recursively from input_dir
+    pdf_files = input_dir.rglob("*.pdf")
 
     for pdf_path in pdf_files:
 
@@ -63,8 +66,8 @@ def visualize_pymupdf_blocks(input_dir, output_dir):
 
 if __name__ == "__main__":
 
-    input_directory = "data/pdfs"
-    output_directory = "data/visualized_pdfs"
+    input_directory = r"E:\HILLUL\Project Associate - I\SDEP\FERMENTED_FOOD_PDFS\Bhagyoshree_MCA_JEC"
+    output_directory = "data/Bhagyoshree_MCA_JEC_visualized_pdfs"
 
     visualize_pymupdf_blocks(
         input_directory,
